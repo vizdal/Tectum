@@ -19,8 +19,24 @@ function getCookie(name) {
     return cookieValue;
 }
 var csrftoken = getCookie('csrftoken');
-
+submitProfileForm = function(e){
+		var url = "/profile/update_profile/";
+		$.ajax({
+           		type: "POST",
+           		url: url,
+           		data: $("#profile_form").serialize(),
+           		success: function(data)
+           		{
+               			$("#container-div").html(data);
+           		}
+         	});
+		e.preventDefault();	
+}
+/**
+ *Custom methods for Tectum
+ * */
 loadprofile = function(userid){/*User id will be passed as null for static page*/
+     console.log(userid)
     $("#container-div").load('profile.html');
 }
 loadapartment = function(userid){
