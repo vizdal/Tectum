@@ -4,7 +4,7 @@ from profile.models import Profile
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Profile
-        exclude = ('image_url',)
+        fields = "__all__"
     #first_name = forms.CharField(label='First Name',max_length=100)
     #last_name = forms.CharField(label='Last Name',max_length=100)
     #gender = forms.ChoiceField(choices=Profile.gender_options)

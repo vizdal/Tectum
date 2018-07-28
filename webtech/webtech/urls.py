@@ -20,5 +20,6 @@ from webtech.views import index
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('profile/',include('profile.urls')),
+    path('feedback/',include('feedback.urls')),
     path('',index,name="index"),
 ]
