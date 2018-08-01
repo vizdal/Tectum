@@ -1,63 +1,70 @@
-
+{% load static %}
+{% include "header.html" %}
 
 <div class="MainPage">
    <div class="apartments content-wrapper">
       <div class="container">
+
+         <form action =# method="GET" id="apartment-filter">
          <div class="filter">
             <div class="row">
                <div class="results_near col-sm-4">
+
                   <label>Showing results near</label>
-                  <select>
-                     <option>Dalhousie University</option>
-                     <option>SMU University</option>
-                     <option>Walmart-Mumfford</option>
-                     <option>Darthmouth</option>
-                     <option>Costco</option>
+                  <select name="nearBy">
+                     <option value="DAL">Dalhousie University</option>
+                     <option value="SMU">SMU University</option>
+                     <option value="WALMART">Walmart-Mumfford</option>
+                     <option value="WALMART">Darthmouth</option>
+                     <option value="COSTCO">Costco</option>
                   </select>
                </div>
                <div class="type_of_room col-sm-4">
                   <label>Type of Room</label>
-                  <select>
-                     <option>1 BHK</option>
-                     <option>2 BHK</option>
-                     <option>3 BHK</option>
-                     <option>Bungalow</option>
-                     <option>Single Room</option>
+                  <select name="TypeOfRoom">
+                     <option value="1">1 BHK</option>
+                     <option value="2">2 BHK</option>
+                     <option value="3">3 BHK</option>
+                     <option value="B">Bungalow</option>
+                     <option value="S">Single Room</option>
                   </select>
                </div>
                <div class="cost_of_room col-sm-4">
                   <label>Cost</label>
-                  <select>
+                  <select name="priceRange">
                      <option>Any</option>
-                     <option>Less than 500 CAD</option>
-                     <option>500 CAD-1000 CAD</option>
-                     <option>1000 CAD-2500 CAD</option>
-                     <option>Above 2500 CAD</option>
+                     <option value="<500">Less than 500 CAD</option>
+                     <option value=">500&&<1000">500 CAD-1000 CAD</option>
+                     <option value=">1000&&<2500">1000 CAD-2500 CAD</option>
+                     <option value=">2500">Above 2500 CAD</option>
                   </select>
                </div>
             </div>
             <div class="row">
                <div class="posession col-sm-4">
                   <label>Posession</label>
-                  <select>
-                     <option>Immediate</option>
-                     <option>within 1 month </option>
-                     <option>1-2 month</option>
+                  <select name="posession">
+                     <option value="<1">within 1 month</option>
+                     <option value="1-2">1-2 month</option>
+                     <!--<option>1-2 month</option>-->
                   </select>
                </div>
                <div class="sharing col-sm-4">
                   <label>Sharing</label>
-                  <select>
-                     <option>
+                  <select name="sharing">
+                     <option value="Y">
                         Yeah
                      </option>
-                     <option>
+                     <option value="N">
                         No 
                      </option>
                   </select>
                </div>
             </div>
          </div>
+            <button class="btn btn-success"> Search </button>
+         </form>
+
          <div class="row">
             <div class="showing-results adjustment">
                <div class="border1 col-sm-2">
@@ -71,7 +78,13 @@
                </div>
             </div>
          </div>
+
+
+
          <div class="apartment-result">
+
+            {% for apartment in allApartments%}
+
             <div class="row">
                <div class="apartmnet-result-detail adjustment">
                   <div class="apartment-image col-sm-3">
@@ -79,15 +92,23 @@
                   </div>
                   <div class="apartment-description col-sm-6">
                      <div class="apartment-name">
-                        Park Victoria Apartments
+                        {{apartment.apartment_name }}
                      </div>
-                     <div class="apartment-availabillity">
-                        Available:20
+                     <div class="apartment-location">
+                        {{apartment.apartment_location }}
                      </div>
-                     <div class="apartment-availabillity-type">
-                        <span class="new">New:5</span>
-                        <span class="new">Shared:15</span>
+                     <div class="apartment_description">
+                        {{apartment.apartment_description }}
                      </div>
+                     <div class="apartment_price">
+                        <span class="new">Monthly Rental - {{apartment.apartment_price}}</span>
+                        <!--<span class="new">Shared:15</span>-->
+                     </div>
+                     <div class="near_by">
+                        <span class="new">Near to - {{apartment.near_by}}</span>
+                        <!--<span class="new">Shared:15</span>-->
+                     </div>
+
                   </div>
                   <div class="Book-apartment col-sm-3">
                      <div onclick="load_apartment_list()" class="btn btn-outline-dark">
@@ -96,150 +117,9 @@
                   </div>
                </div>
             </div>
-            <div class="row">
-               <div class="apartmnet-result-detail adjustment">
-                  <div class="apartment-image col-sm-3">
-                     <img src="../images/apartment8.jpg" alt="Apartment_Image"/>
-                  </div>
-                  <div class="apartment-description col-sm-6">
-                     <div class="apartment-name">
-                        Park Victoria Apartments
-                     </div>
-                     <div class="apartment-availabillity">
-                        Available:20
-                     </div>
-                     <div class="apartment-availabillity-type">
-                        <span class="new">New:5</span>
-                        <span class="new">Shared:15</span>
-                     </div>
-                  </div>
-                  <div class="Book-apartment col-sm-3">
-                     <div onclick="load_apartment_list()" class="btn btn-outline-dark">
-                        Book
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="row">
-               <div class="apartmnet-result-detail adjustment">
-                  <div class="apartment-image col-sm-3">
-                     <img src="../images/apartment8.jpg" alt="Apartment_Image"/>
-                  </div>
-                  <div class="apartment-description col-sm-6">
-                     <div class="apartment-name">
-                        Park Victoria Apartments
-                     </div>
-                     <div class="apartment-availabillity">
-                        Available:20
-                     </div>
-                     <div class="apartment-availabillity-type">
-                        <span class="new">New:5</span>
-                        <span class="new">Shared:15</span>
-                     </div>
-                  </div>
-                  <div class="Book-apartment col-sm-3">
-                     <div onclick="load_apartment_list()" class="btn btn-outline-dark">
-                        Book
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="row">
-               <div class="apartmnet-result-detail adjustment">
-                  <div class="apartment-image col-sm-3">
-                     <img src="../images/apartment8.jpg" alt="Apartment_Image"/>
-                  </div>
-                  <div class="apartment-description col-sm-6">
-                     <div class="apartment-name">
-                        Park Victoria Apartments
-                     </div>
-                     <div class="apartment-availabillity">
-                        Available:20
-                     </div>
-                     <div class="apartment-availabillity-type">
-                        <span class="new">New:5</span>
-                        <span class="new">Shared:15</span>
-                     </div>
-                  </div>
-                  <div class="Book-apartment col-sm-3">
-                     <div onclick="load_apartment_list()" class="btn btn-outline-dark">
-                        Book
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="row">
-               <div class="apartmnet-result-detail adjustment">
-                  <div class="apartment-image col-sm-3">
-                     <img src="../images/apartment8.jpg" alt="Apartment_Image"/>
-                  </div>
-                  <div class="apartment-description col-sm-6">
-                     <div class="apartment-name">
-                        Park Victoria Apartments
-                     </div>
-                     <div class="apartment-availabillity">
-                        Available:20
-                     </div>
-                     <div class="apartment-availabillity-type">
-                        <span class="new">New:5</span>
-                        <span class="new">Shared:15</span>
-                     </div>
-                  </div>
-                  <div class="Book-apartment col-sm-3">
-                     <div onclick="load_apartment_list()" class="btn btn-outline-dark">
-                        Book
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="row">
-               <div class="apartmnet-result-detail adjustment">
-                  <div class="apartment-image col-sm-3">
-                     <img src="../images/apartment8.jpg" alt="Apartment_Image"/>
-                  </div>
-                  <div class="apartment-description col-sm-6">
-                     <div class="apartment-name">
-                        Park Victoria Apartments
-                     </div>
-                     <div class="apartment-availabillity">
-                        Available:20
-                     </div>
-                     <div class="apartment-availabillity-type">
-                        <span class="new">New:5</span>
-                        <span class="new">Shared:15</span>
-                     </div>
-                  </div>
-                  <div class="Book-apartment col-sm-3">
-                     <div onclick="load_apartment_list()" class="btn btn-outline-dark">
-                        Book
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="row">
-               <div class="apartmnet-result-detail adjustment">
-                  <div class="apartment-image col-sm-3">
-                     <img src="../images/apartment8.jpg" alt="Apartment_Image"/>
-                  </div>
-                  <div class="apartment-description col-sm-6">
-                     <div class="apartment-name">
-                        Park Victoria Apartments
-                     </div>
-                     <div class="apartment-availabillity">
-                        Available:20
-                     </div>
-                     <div class="apartment-availabillity-type">
-                        <span class="new">New:5</span>
-                        <span class="new">Shared:15</span>
-                     </div>
-                  </div>
-                  <div class="Book-apartment col-sm-3">
-                     <div onclick="load_apartment_list()" class="btn btn-outline-dark">
-                        Book
-                     </div>
-                  </div>
-               </div>
-            </div>
+
+            {% endfor %}
+
          </div>
       </div>
    </div>
