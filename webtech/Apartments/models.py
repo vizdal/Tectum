@@ -52,7 +52,7 @@ class Apartment(models.Model):
     near_by = models.CharField(max_length=10, choices=near_by, default='DAL')
     type_of_room = models.CharField(max_length=10, choices=type_of_room,default='2')
     posession = models.CharField(max_length=10, choices=posession, default='<1')
-    sharing = models.CharField(max_length=1, choices=sharing, default='Y')
+    sharing = models.CharField(max_length=1, choices=sharing, default='N')
     apartment_image = models.ImageField(upload_to='images/', default='images/svg/apartment8.jpg')
 
 class owner(models.Model):

@@ -22,5 +22,6 @@ urlpatterns = [
     path('profile/',include('profile.urls')),
     path('feedback/',include('feedback.urls')),
     path('apartments/', include('Apartments.urls')),
+    path('owner/', include('owner.urls')),
     path('',index,name="index"),
 ]

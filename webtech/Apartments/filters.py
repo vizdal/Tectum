@@ -1,10 +1,10 @@
-import django_filters
-from Apartments.models import Apartment
+#import django_filters
+#from Apartments.models import Apartment
 
-class ApartmentFilter(django_filters.FilterSet):
+#class ApartmentFilter(django_filters.FilterSet):
 
-    class Meta:
+ #   class Meta:
 
-        model = Apartment
-        fields = ('availability','near_by', 'type_of_room', 'posession', 'sharing')
+#        model = Apartment
+#        fields = ('availability','near_by', 'type_of_room', 'posession', 'sharing')
 

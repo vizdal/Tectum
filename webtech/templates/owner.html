@@ -1,0 +1,67 @@
+{% load static %}
+{% include "header.html" %} 
+<div id="profileparent" ng-app="">
+    <form method="post" id="profile_form" enctype="multipart/form-data" action="/profile/update_profile/" name="profileForm">
+	{% csrf_token %}
+        <p class="p1 h4 emptyimage">Apartment Details</p>
+        <div class="row p4" style="padding-top: 0;margin-left: 0;margin-right: 0;">
+            <div class="col-sm-6 emptyimage">
+                <div class="centerimage">
+			<img src="{% static 'images/svg/apartment.svg' %}" style="width:50%;" class="border" alt="User" />
+                </div>
+                <div class="p1">
+                    <input type="file" name="apartment_image"/>
+                </div>   
+            </div>
+            <div class="col-sm-4">
+                <div class="p05">
+                    <label for="first_name" class="txtgray">Apartment Name</label>
+                    <input type="text" id="apartment_name" ng-required="true" class="form-control" name="apartment_name" value="{{saved_row.apartment_name}}" ng-model="firstname">
+              		<span style="color: red;" id="errorfn">{{profile_form.first_name.errors}}</span>
+                </div>
+                <div class="p05">
+                    <label for="apartment_location" class="txtgray">Location</label>
+                    <input name="apartment_location" value="{{saved_row.apartment_location}}" ng-required="true" type="text" id="apartment_location" class="form-control">
+                    <span style="color: red;" id="errorln">{{profile_form.last_name.errors}}</span>
+                </div>
+                <div class="p05">
+                    <label for="apartment_description" class="txtgray">Description</label>
+                    <input name="apartment_description" value="{{saved_row.apartment_description}}" ng-required="true" type="text" id="apartment_description" class="form-control">
+                    <span style="color: red;" id="errorln">{{profile_form.last_name.errors}}</span>
+                </div>
+                <div class="p05">
+                    <label for="apartment_price" class="txtgray">Apartment Cost</label>
+                    <input type="text" id="apartment_price" name="apartment_price" value="{{saved_row.apartment_price}}" ng-required="true" class="form-control">
+                    <span style="color: red;" id="errorem">{{profile_form.email.errors}}</span>
+                </div>
+                <div class="p05">
+                    <label for="availability" class="txtgray">Availability</label>
+                    <input type="text" id="availability" name="availability" value="{{saved_row.availability}}" ng-required="true" class="form-control">
+                    <span style="color: red;" id="errorph">{{profile_form.phone.errors}}</span>
+                </div>
+                <div class="p05">
+                    <label for="near_by" class="txtgray">Landmark</label>
+                    <input type="text" id="near_by" name="near_by" value="{{saved_row.near_by}}" ng-required="true" class="form-control">
+                    <span style="color: red;" id="errorun">{{profile_form.university.errors}}</span>
+                </div>
+                <div class="p05">
+                    <label for="posession" class="txtgray">Date of Posession</label>
+                    <input type="text" id="posession" name="posession" ng-required="true" value="{{saved_row.posession}}" class="form-control">
+                    <span style="color: red;" id="errorbr">{{profile_form.branch.errors}}</span>
+                </div>
+                <div class="p05">
+                    <label for="type_of_room" class="txtgray">Type</label>
+                    <select class="form-control" name="type_of_room" id="type_of_room">
+                        <option value='1'>1 BHK</option>
+                        <option value='2'>2 BHK</option>
+                        <option value='3'>3 BHK</option>
+                        <option value='4'>Bunglow</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <div class="emptyimage p1">
+            <button class="btn btn-success" style="width: 10em;"> Save</button>
+        </div>
+    </form>
+</div>

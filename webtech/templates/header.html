@@ -19,19 +19,20 @@
   <body>
 	<script src="{% static 'js/geolocation.js' %}"></script>
   	<nav class="navbar navbar-dark bg-dark p1">
-  		<a class="navbar-brand" href="#" onclick="loadhome()">
+  		<a class="navbar-brand" href="#" onclick="window.location='/'">
 			<img src="{% static 'images/svg/font.svg' %}" width="30" height="30" class="d-inline-block align-top" alt="Tectum">
     		<span class="texttitle">ectum</span>
   		</a>
   		<div class="navbar-nav-scroll">
 		    <ul class="navbar-nav bd-navbar-nav flex-row">
-		      <li class="nav-item ptr locstyle">
+		      {% if "owner" not in request.get_full_path%}
+          <li class="nav-item ptr locstyle">
 		      	<a class="ptr">
-				<img src="{% static 'images/svg/CA.svg' %}" class="locwidth" id="localeflag" alt="Flag">
-  					<span id='local_name' class="text-white vm texttitle">Canada</span>
-  				</a>
+				      <img src="{% static 'images/svg/CA.svg' %}" class="locwidth" id="localeflag" alt="Flag">
+  					   <span id='local_name' class="text-white vm texttitle">Canada</span>
+  				  </a>
 		      </li>
-		      <li class="nav-item ptr pr1" onclick="loadhome()" title="Home">
+		      <li class="nav-item ptr pr1" onclick="window.location='/'" title="Home">
 			      <a class="nav-link active adjwidth"><img class="imagetitle" src="{% static 'images/svg/home_icon.svg' %}" alt="Home"><span class="texttitle">Home</span></a>
 		      </li>
 		      <li class="nav-item ptr pr1 adjwidth" title="Apartment" onclick="window.location='/apartments/'">
@@ -40,6 +41,7 @@
 		      <li class="nav-item ptr pr1 adjwidth" title="Feedback" onclick="window.location='/feedback/1/'">
 			      <a class="nav-link"><img class="imagetitle" src="{% static 'images/svg/feedback.svg' %}" alt="Feedback"><span class="texttitle">Feedback</span></a>
 		      </li>
+          {% endif %}
 		      <li class="nav-item ptr dropdown">
 			      <img src="{% static 'images/svg/pf.svg' %}" style="width:2.5em;" class="rounded-circle border dropdown-toggle"  id="navDropDownLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" alt="Profile Picture">
 		        <!--Using inline style to override bootstrap default-->
@@ -48,6 +50,8 @@
             			<span class="h6" onclick="window.location='/profile/1/'">Viswanath M S</span>
             		</a>
             		<div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/owner/">Admin</a>
+                <div class="dropdown-divider"></div>
             		<a class="dropdown-item" href="#">Logout</a>
         		</div>
 		      </li>	

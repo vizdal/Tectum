@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'profile.apps.ProfileConfig',
     'feedback.apps.FeedbackConfig',
+    'owner.apps.OwnerConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -40,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Apartments',
-    'django_filters',
+    #'django_filters',
 ]
 
 MIDDLEWARE = [
@@ -82,7 +83,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'tectum',
         'USER': 'root',
-        'PASSWORD': 'sai',
+        'PASSWORD': '',
         'HOST': 'localhost',
         'PORT': '3306',
     }

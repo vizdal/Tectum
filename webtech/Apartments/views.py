@@ -3,7 +3,7 @@ from django.core import serializers
 from django.shortcuts import render,render_to_response
 from Apartments.models import Apartment
 from django.http import HttpResponse,HttpResponseRedirect
-from Apartments.filters import ApartmentFilter
+#from Apartments.filters import ApartmentFilter
 
 
 class Apartment_list_view():
@@ -20,6 +20,6 @@ class Apartment_list_view():
     def get_context_data(self, **kwargs):
 
         context = super().get_context_data(**kwargs)
-        context['filter']= ApartmentFilter(self.request.GET, queryset=self.get_queryset())
+#        context['filter']= ApartmentFilter(self.request.GET, queryset=self.get_queryset())
 
         return context
