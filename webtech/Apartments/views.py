@@ -9,17 +9,9 @@ from django.http import HttpResponse,HttpResponseRedirect
 class Apartment_list_view():
 
     def all_apartments(request):
-
-
         allApartments = Apartment.objects.all()
-
-        args = {'allApartments' : allApartments }
-
+        args = {'allApartments' : allApartments,'count':allApartments.count}
         return render(request, "apartment.html", args)
-
     def get_context_data(self, **kwargs):
-
         context = super().get_context_data(**kwargs)
-#        context['filter']= ApartmentFilter(self.request.GET, queryset=self.get_queryset())
-
         return context

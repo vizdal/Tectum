@@ -311,5 +311,13 @@ background-color: #343a40!important;
 .svg_disable{
     filter: brightness(0.8);
 }
-
+.apartment_cost{
+    font-size: 0.8em;
+    float: right;
+    border: 1px solid #FFC312;
+    padding: 0.2em;
+    background-color: #fdcb6e;
+    color: white;
+    vertical-align: middle;
+}
 

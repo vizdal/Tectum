@@ -64,59 +64,32 @@
          </div>
             <button class="btn btn-success"> Search </button>
          </form>
-
          <div class="row">
             <div class="showing-results adjustment">
                <div class="border1 col-sm-2">
                   &#160;
                </div>
                <div class="total-results col-sm-2">
-                  Showing 1135 results
+                  Showing {{ count }} result(s)
                </div>
                <div class="border1 col-sm-8">
                   &#160;
                </div>
             </div>
          </div>
-
-
-
-         <div class="apartment-result">
-
+         <div class="apartment-result" style="margin: auto;">
             {% for apartment in allApartments%}
-
-            <div class="row">
-               <div class="apartmnet-result-detail adjustment">
-                  <div class="apartment-image col-sm-3">
-                     <img style="width: 60%;" src="{% static 'images/svg/apartment.svg'%}" alt="Apartment_Image"/>
+               <div class="card" style="width: 18rem;margin: 1em;display: inline-block;">
+                  <div style="text-align: center;">
+                     <img style="width: 60%;margin: auto;padding-top: 3em;" class="card-img-top" src="{% static '' %}{{apartment.apartment_image}}" alt="Card image cap">
                   </div>
-                  <div class="apartment-description col-sm-6">
-                     <div class="apartment-name">
-                        {{apartment.apartment_name }}
-                     </div>
-                     <div class="apartment-location">
-                        {{apartment.apartment_location }}
-                     </div>
-                     <div class="apartment_description">
-                        {{apartment.apartment_description }}
-                     </div>
-                     <div class="apartment_price">
-                        <span class="new">Monthly Rental - {{apartment.apartment_price}}</span>
-                        <!--<span class="new">Shared:15</span>-->
-                     </div>
-                     <div class="near_by">
-                        <span class="new">Near to - {{apartment.near_by}}</span>
-                        <!--<span class="new">Shared:15</span>-->
-                     </div>
-
-                  </div>
-                  <div class="Book-apartment col-sm-3">
-                     <div onclick="load_apartment_list()" class="btn btn-outline-dark">
-                        Book
-                     </div>
+                  <div class="card-body">
+                     <span><h5 class="card-title">{{apartment.apartment_name}} <span class="apartment_cost">C$ {{ apartment.apartment_price }}</span></h5></span>
+                     <h6 class="card-title">Near {{apartment.near_by}}</h6>
+                     <p class="card-text">{{apartment.apartment_location }}</p>
+                     <a href="#" class="btn btn-outline-dark">Details</a>
                   </div>
                </div>
-            </div>
             {% endfor %}
          </div>
       </div>
