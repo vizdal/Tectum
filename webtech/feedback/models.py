@@ -14,6 +14,6 @@ class Feedback(models.Model):
 
     feedback_id = models.AutoField(primary_key=True)
     user_id = models.ForeignKey('profile.Profile',on_delete=models.CASCADE)
-    apartment_name = models.CharField(max_length=50,validators=[alphanumeric_validator])
+    apartment_id = models.ForeignKey('Apartments.Apartment',on_delete=models.CASCADE,default=1)
     description = models.CharField(max_length=400,validators=[alphanumeric_validator])
     rating = models.IntegerField(default=1)
