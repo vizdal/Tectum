@@ -87,11 +87,14 @@
                      <span><h5 class="card-title">{{apartment.apartment_name}} <span class="apartment_cost">C$ {{ apartment.apartment_price }}</span></h5></span>
                      <h6 class="card-title">Near {{apartment.near_by}}</h6>
                      <p class="card-text">{{apartment.apartment_location }}</p>
-                     <a href="#" class="btn btn-outline-dark">Details</a>
+                     <a href="{{apartment.apartment_id }}" class="btn btn-outline-dark">Details</a>
                   </div>
             {% endfor %}
          </div>
       </div>
    </div>
+   {% include "footer.html" %}
+
+</div>
 </div>
 

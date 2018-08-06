@@ -17,7 +17,23 @@
     font-size: 12em;
     text-align: center;
 }
-
+.copyRight {
+    color: #fff;
+    text-align: center;
+}
+.footer-wrapper {
+    padding: 4em;
+}
+.SocailLinks {
+    text-align: center;
+    color: #fff;
+}
+.logo {
+    display: inline-block;
+}
+span.texttitle {
+    color: #fff;
+}
 .tagline{
       font-size: 2em;
   font-family: Billabong;

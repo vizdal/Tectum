@@ -1,4 +1,6 @@
-      <div class="MainPage">
+{% load static %}
+{% include "header.html" %}
+        <div class="MainPage">
          <div class="apartment-details content-wrapper">
             <div class="container">
                <div class="pdpage-content">
@@ -8,11 +10,23 @@
                      </div>
                      <div class="apartment-details-pd col-sm-4">
                         <div class="apartment-name-pd">
-                           Park victoria Apartments
+                           Name: {{ apartment.apartment_name }}
                         </div>
                         <div class="apartment-desc-pd">
-                           Park victoria Apartments is very good . Aman lives here. He is god and universe is from him. He is creator and destroyer of the universe. He has third eye with which he can destroy anything.
+                           Description:{{ apartment.apartment_description }}
                         </div>
+
+                        <div class="apartment-desc-pd">
+                           Near By:{{ apartment.near_by }}
+                        </div>
+                        <div class="apartment-desc-pd">
+                           Location:{{ apartment.apartment_location }}
+                        </div>
+
+
+
+
+
                      </div>
                   </div>
                </div>
@@ -31,7 +45,7 @@
                                     Unit number:410
                                  </div>
                                  <div class="shared">
-                                    Shared
+                                    Shared::{{ apartment.sharing }}
                                  </div>
                               </div>
                               <div class="col-sm-6">
@@ -218,7 +232,8 @@
             </div>
          </div>
          </div>
-      
+         {% include "footer.html" %}
+
       <div class="hidden-xs overlay-layer">&nbsp;</div>
       <script >
       	$('.close-quickview, .overlay-layer').click(function(){
