@@ -1,15 +1,17 @@
 from django.db import models
 from django.core.validators import RegexValidator,EmailValidator
 import json
+from datetime import date
 
 # Create your models here.
 class Apartment(models.Model):
 
     alphanumeric_validator = RegexValidator(r'^[A-Za-z0-9]*$','Shall Contain only alphabets and numbers')
-    alphabet_validator = RegexValidator(r'^[A-Za-z0-9]$','Shall contain only alphabets')
-    numeric_validator = RegexValidator(r'^[0-9]$','Shall contain only numerals')
+    alphabet_validator = RegexValidator(r'^[A-Za-z]*$','Shall contain only alphabets')
+    numeric_validator = RegexValidator(r'^[0-9]*$','Shall contain only numerals')
     email_validator = EmailValidator(message='Please check the email address')
-
+    alphabet_and_space_validator = RegexValidator(r'^[A-Za-z\s]*$','Shall contain only alphabets')
+    
     available_options = (
         ('Y', 'available'),
         ('N', 'Non-not-available')
@@ -42,18 +44,19 @@ class Apartment(models.Model):
     )
 
     apartment_id = models.AutoField(primary_key=True)
-    owner_id = models.ForeignKey('owner',on_delete=models.CASCADE)
-    apartment_name = models.CharField(max_length=50,validators=[alphanumeric_validator])
-    # available_units = models.CharField(max_length=50, validators=[numeric_validator])
+    user_id = models.ForeignKey('profile.Profile',on_delete=models.CASCADE)
+    apartment_name = models.CharField(max_length=50,validators=[alphabet_and_space_validator])
+    available_units = models.IntegerField(default=0,validators=[numeric_validator])
     apartment_location = models.CharField(max_length=400,validators=[alphanumeric_validator])
     apartment_description = models.CharField(max_length=400, validators=[alphanumeric_validator])
-    apartment_price = models.CharField(max_length=50, validators=[numeric_validator])
-    availability = models.CharField(max_length=1, choices=available_options)
+    apartment_price = models.IntegerField(default=0, validators=[numeric_validator])
+    #availability = models.CharField(max_length=1, choices=available_options)
     near_by = models.CharField(max_length=10, choices=near_by, default='DAL')
     type_of_room = models.CharField(max_length=10, choices=type_of_room,default='2')
-    posession = models.CharField(max_length=10, choices=posession, default='<1')
+    posession = models.DateField(default=date.today)
+    #posession = models.BigIntegerField(default=0, validators=[numeric_validator])
     sharing = models.CharField(max_length=1, choices=sharing, default='N')
-    apartment_image = models.ImageField(upload_to='images/', default='images/svg/apartment8.jpg')
+    apartment_image = models.ImageField(upload_to='images/', default='images/svg/apartment.svg')
 
 class owner(models.Model):
     alphanumeric_validator = RegexValidator(r'^[A-Za-z0-9]*$', 'Shall Contain only alphabets and numbers')

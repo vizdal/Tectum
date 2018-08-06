@@ -1,7 +1,7 @@
 {% load static %}
 {% include "header.html" %} 
 <div id="profileparent" ng-app="">
-    <form method="post" id="profile_form" enctype="multipart/form-data" action="/profile/update_profile/" name="profileForm">
+    <form method="post" id="profile_form" enctype="multipart/form-data" action="/owner/1/save/" name="profileForm">
 	{% csrf_token %}
         <p class="p1 h4 emptyimage">Apartment Details</p>
         <div class="row p4" style="padding-top: 0;margin-left: 0;margin-right: 0;">
@@ -35,15 +35,22 @@
                     <span style="color: red;" id="errorem">{{profile_form.email.errors}}</span>
                 </div>
                 <div class="p05">
-                    <label for="availability" class="txtgray">Availability</label>
-                    <input type="text" id="availability" name="availability" value="{{saved_row.availability}}" ng-required="true" class="form-control">
+                    <label for="available_units" class="txtgray">Availability</label>
+                    <input type="text" id="available_units" name="available_units" value="{{saved_row.available_units}}" ng-required="true" class="form-control">
                     <span style="color: red;" id="errorph">{{profile_form.phone.errors}}</span>
                 </div>
                 <div class="p05">
                     <label for="near_by" class="txtgray">Landmark</label>
-                    <input type="text" id="near_by" name="near_by" value="{{saved_row.near_by}}" ng-required="true" class="form-control">
-                    <span style="color: red;" id="errorun">{{profile_form.university.errors}}</span>
+                    <select id="near_by" name="near_by" value="{{saved_row.near_by}}" ng-required="true" class="form-control">
+                        <option value="DAL">Dalhousie University</option>
+                        <option value="SMU">SMU University</option>
+                        <option value="WALMART">Walmart-Mumfford</option>
+                        <option value="WALMART">Darthmouth</option>
+                        <option value="COSTCO">Costco</option>
+                    </select>
                 </div>
+                <input type="hidden" name="sharing" value="N"/>
+                <input type="hidden" name="user_id" value="1"/>
                 <div class="p05">
                     <label for="posession" class="txtgray">Date of Posession</label>
                     <input type="text" id="posession" name="posession" ng-required="true" value="{{saved_row.posession}}" class="form-control">
