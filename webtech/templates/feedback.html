@@ -17,8 +17,18 @@
           </div>
         </div>
         <div class="col-sm-9">
-          <input type="text" name="apartment_name" id="apartment_name" placeholder="Apartment Name" />
-          <span style="color: red;" id="errorfn">{{feedback_form.apartment_name.errors}}</span>
+          <div class="Apartments">
+              <label>Apartment Names:</label>
+            <select name="apartment_id" id="apartment_id" placeholder="Apartment Name">
+                {% for apartment in allApartments%}
+
+                <option value="{{ apartment.apartment_id }}">
+                    {{apartment.apartment_name }}
+                </option>
+                {% endfor %}
+            </select>
+        </div>
+          <span style="color: red;" id="errorfn">{{feedback_form.apartment_id.errors}}</span>
           <div class="p1">
             <img class="profile-icons p05 feedback_icon" onclick="changeRating(5)" data-val="5" src="{% static 'images/svg/in-love.svg' %}" alt="love_face"/>
             <img class="profile-icons p05 feedback_icon" onclick="changeRating(4)" data-val="4" src="{% static 'images/svg/smile.svg' %}" alt="smile_face">
@@ -28,7 +38,7 @@
             <input type="hidden" name="rating" id="rating">
           </div>
           <div>
-            <textarea class="comments" id="description" name="description" placeholder='Comments'></textarea>\
+            <textarea class="comments" id="description" name="description" placeholder='Comments'></textarea>
             <span style="color: red;" id="errorfn">{{feedback_form.description.errors}}</span>
           </div>
           <div class="p1"><input type="Submit" class="btn btn-outline-dark" value="Submit Feedback"></div>
