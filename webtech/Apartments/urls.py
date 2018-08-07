@@ -4,5 +4,6 @@ from Apartments.views import Apartment_list_view
 
 urlpatterns = [
     path('',Apartment_list_view.all_apartments),
+    path('<int:apartment_id>/', Apartment_list_view.apartment_form, name="apartment_page"),
 
 ]

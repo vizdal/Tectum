@@ -69,6 +69,35 @@
                     <input type="text" id="available_units" name="available_units" value="{{saved_row.available_units}}" ng-required="true" class="form-control">
                     <span style="color: red;" id="errorph">{{profile_form.phone.errors}}</span>
                 </div>
+
+
+                <div class="p05">
+                    <label for="car_parking" class="txtgray">Parking</label>
+                    <select id="car_parking" name="car_parking" value="{{saved_row.car_parking}}" ng-required="true" class="form-control">
+                        <option value="Y">Yes</option>
+                        <option value="N">No</option>
+                    </select>
+                    <span style="color: red;" id="errorph">{{profile_form.phone.errors}}</span>
+                </div>
+
+                <div class="p05">
+                    <label for="gym" class="txtgray">Gym</label>
+                    <select id="gym" name="gym" value="{{saved_row.gym}}" ng-required="true" class="form-control">
+                        <option value="Y">Yes</option>
+                        <option value="N">No</option>
+                    </select>
+                    <span style="color: red;" id="errorph">{{profile_form.phone.errors}}</span>
+                </div>
+
+                <div class="p05">
+                    <label for="heater" class="txtgray">Heater</label>
+                    <select id="heater" name="heater" value="{{saved_row.heater}}" ng-required="true" class="form-control">
+                        <option value="Y">Yes</option>
+                        <option value="N">No</option>
+                    </select>
+                    <span style="color: red;" id="errorph">{{profile_form.phone.errors}}</span>
+                </div>
+
                 <div class="p05">
                     <label for="near_by" class="txtgray">Landmark</label>
                     <select id="near_by" name="near_by" value="{{saved_row.near_by}}" ng-required="true" class="form-control">
@@ -80,6 +109,8 @@
                     </select>
                 </div>
                 <input type="hidden" name="user_id" value="1"/>
+                <input type="hidden" name="sharing" value="N"/>
+
                 <div class="p05">
                     <label for="posession" class="txtgray">Date of Posession</label>
                     <input type="text" id="posession" name="posession" ng-required="true" value="{{saved_row.posession}}" class="form-control">
