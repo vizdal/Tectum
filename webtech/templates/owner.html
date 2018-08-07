@@ -11,7 +11,37 @@
                 </div>
                 <div class="p1">
                     <input type="file" name="apartment_image"/>
-                </div>   
+                </div> 
+                <div class="emptyimage p1">
+                    {% if saved_row.is_veg == 'N' %}
+                        <img title="Non-Vegetarian" class="profile-icons ptr" id="meal" onclick="toggleMealSelection()" src="{% static 'images/svg/nv.svg' %}" alt="Non-Vegetarian">
+                    {% else %}
+                        <img title="Vegetarian" class="profile-icons ptr" id="meal" onclick="toggleMealSelection()" src="{% static 'images/svg/veg.svg' %}" alt="Vegetarian">
+                    {% endif %}
+                    <input type="hidden" value='{{saved_row.is_veg}}' name='is_veg' id="is_veg_hidden"/>
+                    {% if saved_row.is_smoke == 'N' %}
+                        <img title="Non-Smoker" class="profile-icons ptr" id="smoke" onclick="toggleSmokeSelection()" src="{% static 'images/svg/ns.svg' %}" alt="Non-Smoker">
+                    {% else %}
+                        <img title="Non-Smoker" class="profile-icons ptr" id="smoke" onclick="toggleSmokeSelection()" src="{% static 'images/svg/smoke.svg' %}" alt="Smoker">
+                    {% endif %}
+                    <input type="hidden" value='{{saved_row.is_smoke}}' name='is_smoke' id="is_smoke_hidden"/>
+                    {% if saved_row.is_alcohol == 'N' %}
+                        <img title="Non-Alcoholic" class="profile-icons ptr" id="alcohol" onclick="toggleAlcoholSelection()" src="{% static 'images/svg/na.svg' %}" alt="Non-Alcoholic">
+                    {% else %}
+                        <img title="Non-Alcoholic" class="profile-icons ptr" id="alcohol" onclick="toggleAlcoholSelection()" src="{% static 'images/svg/drink.svg' %}" alt="Alcoholic">
+                    {% endif %}
+                    <input type="hidden" value='{{saved_row.is_alcohol}}' name='is_alcohol' id="is_alcohol_hidden"/>
+                    {% if saved_row.is_veg == 'N' %}
+                        <img title="Exclusive" class="profile-icons ptr" id="group" onclick="toggleGroupSelection()" src="{% static 'images/svg/man.svg' %}" alt="Exclusive">
+                    {% else %}
+                        <img title="Shared" class="profile-icons ptr" id="group" onclick="toggleGroupSelection()" src="{% static 'images/svg/teamwork.svg' %}" alt="Shared">
+                    {% endif %}
+                    <input type="hidden" value='{{saved_row.is_group}}' name='sharing' id="is_group_hidden"/>
+                    <div class="p05" id="roomates_div">
+                        <label for="sharing_count" class="txtgray">Number of Roomates</label>
+                        <input type="text" name="sharing_count" id="sharing_count" value="1"/>
+                    </div>
+                </div>  
             </div>
             <div class="col-sm-4">
                 <div class="p05">
@@ -49,7 +79,6 @@
                         <option value="COSTCO">Costco</option>
                     </select>
                 </div>
-                <input type="hidden" name="sharing" value="N"/>
                 <input type="hidden" name="user_id" value="1"/>
                 <div class="p05">
                     <label for="posession" class="txtgray">Date of Posession</label>

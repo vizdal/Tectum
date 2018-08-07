@@ -162,6 +162,21 @@ toggleAlcoholSelection = function(){
         $("#is_alcohol_hidden").val("N");
     }
 }
+toggleGroupSelection = function(){
+    var src = $("#group");
+    if(src.attr("src").indexOf("man.svg") >=0){
+            src.attr("src","/static/images/svg/teamwork.svg");    
+            src.attr("title","Shared");
+            $("#roomates_div").show();
+            $("#is_group_hidden").val("Y");      
+    } else {
+        src.attr("src","/static/images/svg/man.svg");
+        src.attr("title","Exclusive");
+        $("#roomates_div").hide();
+        $("#sharing_count").val("1");
+        $("#is_group_hidden").validl("N");
+    }   
+}
 /*$('#feedbackform').bootstrapValidator({
         message: 'This value is not valid',
         feedbackIcons: {

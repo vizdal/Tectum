@@ -12,8 +12,6 @@ class Apartment_list_view():
         allApartments = Apartment.objects.all()
         args = {'allApartments' : allApartments,'count':allApartments.count}
         return render(request, "apartment.html", args)
-        args = {'allApartments' : allApartments }
-        return render(request, "apartment.html", args)
     def all_apartment(request):
         allApartments = Apartment.objects.all()
         args = {'allApartments' : allApartments }
