@@ -42,10 +42,10 @@
                            <div class="adjustment show-room">
                               <div class="col-sm-3">
                                  <div class="Unitnumber">
-                                    Unit number:410
+                                    Unit number:710
                                  </div>
                                  <div class="shared">
-                                    Shared::{{ apartment.sharing }}
+                                    Shared
                                  </div>
                               </div>
                               <div class="col-sm-6">
@@ -88,7 +88,7 @@
                            <div class="adjustment show-room free">
                               <div class="col-sm-3">
                                  <div class="Unitnumber">
-                                    Unit number:410
+                                    Unit number:436
                                  </div>
                                  <div class="shared">
                                     Free
@@ -110,7 +110,7 @@
                            <div class="adjustment show-room">
                               <div class="col-sm-3">
                                  <div class="Unitnumber">
-                                    Unit number:410
+                                    Unit number:1625
                                  </div>
                                  <div class="shared">
                                     Shared
@@ -175,12 +175,12 @@
                   <div class="reviews tabs-parent">
                      <div class="tabs-child reviews-tabs-details">
                         <div class="overallreating">
-                           <span>Overall Rating</span><span class="rating"> 3.4</span>
+                           <span>Overall Rating</span><span class="rating"> {{ feedback.rating  }}</span>
                         </div>
                         <div class="Recentratings">
                            <img src="../images/shri.png"alt="profile_pic"/>
                            <span>
-                           No bed bugs! Some relief finally.
+                              {{ feedback.description  }}
                            </span>
                         </div>
                      </div>
