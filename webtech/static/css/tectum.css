@@ -11,6 +11,62 @@
   src: url(../font/cscript.ttf);
 }
 
+.parking.N {
+    background-image: url('../images/svg/no-parking-sign.svg');
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+}
+.parking.Y {
+    background-image: url('../images/svg/parking.svg');
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+}
+
+.heater.Y {
+    background-image: url('../images/svg/water-heater.svg');
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+}
+.heater.N {
+    background-image: url('../images/svg/water-heater.svg');
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+}
+.gym.Y {
+    background-image: url('../images/svg/weightlifting.svg');
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+}
+.gym.N {
+    background-image: url('../images/svg/water-heater.svg');
+    width: 50px;
+    height: 50px;
+    display: inline-block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .app {
     font-family: csscript;
     top: 1em;
