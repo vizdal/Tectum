@@ -37,10 +37,21 @@ class Apartment(models.Model):
     )
 
     sharing = (
-
         ('Y','Sharing'),
         ('N', 'No-Sharing')
+    )
+    meal_options = (
+        ('V','Vegetarian'),
+        ('N','Non-Vegetarian')
+    )
+    smoke_options = (
+        ('S','Smoker'),
+        ('N','Non-Smoker')
+    )
 
+    alcohol_options = (
+        ('A','Alcoholic'),
+        ('N','Non-Alcoholic')
     )
     car_parking = (
 
@@ -66,12 +77,16 @@ class Apartment(models.Model):
     apartment_name = models.CharField(max_length=50,validators=[alphabet_and_space_validator])
     available_units = models.IntegerField(default=0,validators=[numeric_validator])
     apartment_location = models.CharField(max_length=400,validators=[alphanumeric_validator])
-    apartment_description = models.CharField(max_length=400, validators=[alphanumeric_validator])
+    apartment_description = models.CharField(max_length=400, validators=[alphabet_and_space_validator])
     apartment_price = models.IntegerField(default=0, validators=[numeric_validator])
     #availability = models.CharField(max_length=1, choices=available_options)
     near_by = models.CharField(max_length=10, choices=near_by, default='DAL')
     type_of_room = models.CharField(max_length=10, choices=type_of_room,default='2')
     posession = models.DateField(default=date.today)
+    is_veg = models.CharField(max_length=1, choices=meal_options,default='N')
+    is_smoke = models.CharField(max_length=1, choices=smoke_options,default='N')
+    is_alcohol = models.CharField(max_length=1, choices=alcohol_options,default='N')
+    sharing_count = models.IntegerField(default=1, validators=[numeric_validator])
     #posession = models.BigIntegerField(default=0, validators=[numeric_validator])
     sharing = models.CharField(max_length=1, choices=sharing, default='N')
     car_parking = models.CharField(max_length=1, choices=car_parking, default='N')
