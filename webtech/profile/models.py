@@ -10,7 +10,8 @@ class Profile(models.Model):
     email_validator = EmailValidator(message = 'Please check the email address')
     # Regex Reference : https://stackoverflow.com/questions/3868753/find-phone-numbers-in-python-script
     phone_validator = RegexValidator(r'(\d{3}[-\.\s]??\d{3}[-\.\s]??\d{4}|\(\d{3}\)\s*\d{3}[-\.\s]??\d{4}|\d{3}[-\.\s]??\d{4})','Please check your phone number')
-
+    numeric_validator = RegexValidator(r'^[0-9]*$','Shall contain only numbers')
+    
     user_id = models.AutoField(primary_key=True)
     first_name = models.CharField(max_length=50,validators=[alphanumeric_validator])
     meal_options = (
@@ -42,6 +43,7 @@ class Profile(models.Model):
     is_smoke = models.CharField(max_length=1, choices=smoke_options)
     is_alcohol = models.CharField(max_length=1, choices=alcohol_options)
     profile_image = models.ImageField(upload_to='images/', default='images/jpeg/user.jpg')
+    credits = models.IntegerField(default=0,null=True,validators=[numeric_validator])
 
     def __str__():
         return_dict = {}

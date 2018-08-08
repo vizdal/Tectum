@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include,path
 #from django.views.generic import TemplateView
-from webtech.views import index, welcome
+from webtech.views import index, welcome,paymentredirect
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('profile/',include('profile.urls')),
@@ -24,6 +24,7 @@ urlpatterns = [
     path('apartments/', include('Apartments.urls')),
     path('owner/', include('owner.urls')),
     path('',index,name="index"),
-	path('authorize/', include('authorize.urls')),
+    path('authorize/', include('authorize.urls')),
+    path('paymentredirect/',paymentredirect),
     path('welcome/', welcome),
 ]
