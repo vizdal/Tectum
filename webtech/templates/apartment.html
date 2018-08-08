@@ -86,7 +86,11 @@
                      <span><h5 class="card-title">{{apartment.apartment_name}} <span class="apartment_cost">C$ {{ apartment.apartment_price }}</span></h5></span>
                      <h6 class="card-title">Near {{apartment.near_by}}</h6>
                      <p class="card-text">{{apartment.apartment_location }}</p>
+                     {% if is_owner %}
+                     <a href="/owner/apartment/{{apartment.apartment_id }}" class="btn btn-outline-dark">Edit</a>
+                     {% else %}
                      <a href="{{apartment.apartment_id }}" class="btn btn-outline-dark">Details</a>
+                  {% endif %}
                   </div>
             {% endfor %}
          </div>

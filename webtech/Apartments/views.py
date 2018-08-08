@@ -25,6 +25,14 @@ class Apartment_list_view():
         print(data[0])
         feedback=Feedback.objects.get(apartment_id=apartment_id)
         return render(request, 'apartment_list.html', {'apartment': apartment, 'feedback': feedback,'data':data})
+
+    def apartment_by_user(request, user_id):
+        request.META["CSRF_COOKIE_USED"] = True
+        user_id = int(user_id)
+        apartments = Apartment.objects.filter(user_id=user_id)
+        args = {'allApartments': apartments, 'count': apartments.count, 'is_owner':True}
+        return render(request, "apartment.html", args)
+
     def all_apartment(request):
         allApartments = Apartment.objects.all()
         args = {'allApartments' : allApartments }
