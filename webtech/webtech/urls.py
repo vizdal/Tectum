@@ -25,4 +25,5 @@ urlpatterns = [
     path('owner/', include('owner.urls')),
     path('',index,name="index"),
 	path('authorize/', include('authorize.urls')),
+    path('welcome/', welcome),
 ]
