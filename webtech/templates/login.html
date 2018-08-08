@@ -1,3 +1,11 @@
+{% load static %}
+{#{% csrf_token %}#}
+{% for field in form.visible_fields %}
+    {{ field.help_text }} <br/>
+    {{ field }} <br/>
+    {{ field.errors }}<br/>
+{% endfor %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,29 +14,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet"/>
-   <link rel="stylesheet" href="../css/tectum.css">
+  		<link rel="stylesheet" type="text/css" href="{% static 'css/normalize.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'css/demo.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'css/component.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'css/cs-select.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'css/cs-skin-boxes.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'css/tectum.css' %}" />
+{#		<script src="{% static 'js/angular.min.js' %}"></script>#}
+{#		<script src="{% static 'js/modernizr.custom.js' %}"></script>#}
 </head>
 <body>
     <div class="LoginPage">
 
         <div class="container logincontainer">
-            <h1 class="LoginHeader">Login</h1>
             
             <div class="row">
                 <h2 class="emaillogin">Login With Email </h2>
-                <form action="#" class="LoginForm">
+                <form method="POST" action="/authorize/login/" class="LoginForm" autocomplete="off">
+                    {% csrf_token %}
                     <div class="Email">
-                        <input type="text" placeholder="Email">
+                        <input type="text" id="user_email" name="user_email" placeholder="Email" required="True">
                     </div>
 
-
                     <div class="Password">
-                        <input type="password" placeholder="Password">
+                        <input type="password" id="user_password" name="user_password" placeholder="Password" required="True">
                     </div>
 
                     <div>
-                        <input type="submit" class="btn loginbtn" value="Login">&#160;</input>
+                        <button class="btn loginbtn"> Login  </button>
                     </div>
+
                     <label>
                         <input type="checkbox" checked="checked" name="remember"> Remember me
                     </label>
@@ -40,17 +55,7 @@
                 </form>
             </div>
 
-            <div class="row">
-                <h2 class="emaillogin"> Connect With Social Account</h2>
-                <a href="#">
-                    <img class="social-connect"alt="facebook" src="../images/facebook.png"> </a>
-                
-                <a href="#">
-                    <img class="social-connect" alt="twitter" src="../images/twitter.png" ></a>
-                <a href="#">
-                    <img  class="social-connect" alt="google" src="../images/google-plus.png"> </a>
-                              
-            </div>
+            <h2> {{ error }}</h2>
         </div>
     </div>
 </body>
