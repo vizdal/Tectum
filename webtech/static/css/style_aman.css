@@ -116,11 +116,18 @@ padding-bottom: 6%;
     margin-top: 3em;
 }
 .quick-view-details,.free-view-details {
-    top: 15%;
+    top: 5%;
     left: 15%;
     background: #fff;
     padding: 4%;
     right: 15%;
+}
+.apartment-details .btn.btn-outline-dark {
+    margin-bottom: 10px;
+}
+.apartment-details a.btn.btn-outline-dark {
+    margin-bottom: 10px;
+    padding-right: 25px;
 }
 .BookaPartment {
     background-color: #000;

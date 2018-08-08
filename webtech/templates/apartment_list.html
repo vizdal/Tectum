@@ -34,12 +34,12 @@
                   </ul>
                   <div class="availability tabs-parent">
                      <div class="tabs-child active availability-tabs-details">
-                        {% for i in data %}
+                        {% for unit in data %}
                         <div class="row">
                            <div class="adjustment show-room">
                               <div class="col-sm-3">
                                  <div class="Unitnumber">
-                                    Unit number:{{ i }}
+                                    Unit number:{{ unit }}
                                  </div>
                                  <div class="shared">
                                     Number of Roommates:{{ apartment.sharing_count }}
@@ -78,6 +78,10 @@
                                     <div class="btn btn-outline-dark" onclick="book_now_click()">
                                        Details
                                     </div>
+                                     <div class="booknow" onclick="book_now_click()">
+                                         <a class="btn btn-outline-dark "href="{{ unit }}">Book</a>
+                                    </div>
+
                                  </div>
                               </div>
                            </div>
@@ -174,9 +178,7 @@
                Cost: {{ apartment.apartment_price }}
             </div>
 
-         <div class="row requext-button">
-            <div class="btn btn-outline-dark">Request Accomodation</div>
-         </div>
+
       </div>
    </div>
       <div class="free-view-details"  style="padding: 0;">
