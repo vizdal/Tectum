@@ -2,10 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd6296d4-6f63-4858-a41d-635ffff4bb70" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/webtech/static/images/svg/buy.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/webtech/static/images/svg/info.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webtech/static/css/style_aman.css" beforeDir="false" afterPath="$PROJECT_DIR$/webtech/static/css/style_aman.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webtech/templates/apartment_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/webtech/templates/apartment_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webtech/webtech/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/webtech/webtech/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,13 +31,13 @@
           <entry key="js" value="3" />
           <entry key="php" value="1" />
           <entry key="py" value="82" />
-          <entry key="svg" value="5" />
+          <entry key="svg" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="134" />
-          <entry key="HTML" value="1408" />
+          <entry key="CSS" value="136" />
+          <entry key="HTML" value="1536" />
           <entry key="Python" value="1067" />
         </counts>
       </usages-collector>
@@ -48,13 +49,13 @@
           <entry key="JavaScript" value="3" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Python" value="82" />
-          <entry key="SVG" value="5" />
+          <entry key="SVG" value="7" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="134" />
-          <entry key="html" value="1408" />
+          <entry key="css" value="136" />
+          <entry key="html" value="1536" />
           <entry key="py" value="1067" />
         </counts>
       </usages-collector>
@@ -74,8 +75,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/webtech/static/css/style_aman.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="130" column="1" selection-start-line="130" selection-start-column="1" selection-end-line="130" selection-end-column="1" />
+            <state relative-caret-position="391">
+              <caret line="121" column="1" selection-start-line="121" selection-start-column="1" selection-end-line="121" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -83,8 +84,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webtech/templates/apartment_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="80" column="56" selection-start-line="80" selection-start-column="56" selection-end-line="80" selection-end-column="56" />
+            <state relative-caret-position="262">
+              <caret line="161" column="41" selection-start-line="161" selection-start-column="41" selection-end-line="161" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -113,6 +114,7 @@
       <find>save</find>
       <find>btn btn-outline-dark</find>
       <find>320</find>
+      <find>friend1 col-sm-6</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -197,7 +199,15 @@
               <item name="Tectum" type="462c0819:PsiDirectoryNode" />
               <item name="webtech" type="462c0819:PsiDirectoryNode" />
               <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Tectum" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Tectum" type="462c0819:PsiDirectoryNode" />
+              <item name="webtech" type="462c0819:PsiDirectoryNode" />
+              <item name="static" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
+              <item name="svg" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Tectum" type="b2602c69:ProjectViewProjectNode" />
@@ -256,8 +266,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\Web_project_suresh\Tectum\webtech\static\images" />
       <recent name="F:\Web_project_suresh\Tectum\webtech\static\images\svg" />
+      <recent name="F:\Web_project_suresh\Tectum\webtech\static\images" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -342,12 +352,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/webtech/profile/admin.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webtech/webtech/views.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/webtech/profile/apps.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -641,17 +645,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/webtech/static/images/svg/info.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/webtech/static/images/svg/buy.svg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/webtech/templates/apartment_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="80" column="56" selection-start-line="80" selection-start-column="56" selection-end-line="80" selection-end-column="56" />
+        <state relative-caret-position="262">
+          <caret line="161" column="41" selection-start-line="161" selection-start-column="41" selection-end-line="161" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webtech/static/css/style_aman.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="130" column="1" selection-start-line="130" selection-start-column="1" selection-end-line="130" selection-end-column="1" />
+        <state relative-caret-position="391">
+          <caret line="121" column="1" selection-start-line="121" selection-start-column="1" selection-end-line="121" selection-end-column="1" />
         </state>
       </provider>
     </entry>
