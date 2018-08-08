@@ -6,7 +6,7 @@
                <div class="pdpage-content">
                   <div class="row">
                      <div class="apartment-image-pd col-sm-8">
-                        <img src="" alt="image"/>
+                        <img src="{% static '' %}{{apartment.apartment_image}}" alt="image"/>
 
                      </div>
                      <div class="apartment-details-pd col-sm-4">
@@ -23,15 +23,6 @@
                         <div class="apartment-desc-pd">
                            Location:{{ apartment.apartment_location }}
                         </div>
-
-
-                            {{ data }}
-                         {% for i in data %}
-                            <div class="user_pod">
-                                {{ i }}
-                            </div>
-                        {% endfor %}
-
                      </div>
                   </div>
                </div>
@@ -173,7 +164,7 @@
                </div>
             </div>
             <div class="cost">
-               Cost: CAD 320
+               Cost: {{ apartment.apartment_price }}
             </div>
          <div class="row requext-button">
             <div class="btn btn-outline-dark">Request Accomodation</div>
