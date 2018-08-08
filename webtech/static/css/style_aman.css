@@ -89,6 +89,20 @@ padding-bottom: 6%;
     display: none;
     left: 0;
 }
+.Possession {
+    text-align: center;
+    font-size: 17px;
+    font-weight: 700;
+	    margin-top: 2em;
+
+}
+.typeofroom {
+    text-align: center;
+    font-size: 17px;
+    font-weight: 700;
+	    margin-top: 2em;
+
+}
 .close-quickview {
     cursor: pointer;
     position: absolute;
