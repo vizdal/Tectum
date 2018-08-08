@@ -17,7 +17,6 @@ class Apartment(models.Model):
         ('Y', 'available'),
         ('N', 'Non-not-available')
     )
-
     near_by = (
         ('DAL', 'Dalhousie university'),
         ('SMU', 'SMU university'),
@@ -31,12 +30,6 @@ class Apartment(models.Model):
         ('B', 'Bungalow'),
         ('S', 'Single Room'),
     )
-
-    posession = (
-        ('<1', 'Less than month'),
-        ('1-2', '1-2 month')
-    )
-
     sharing = (
         ('Y','Sharing'),
         ('N', 'No-Sharing')
@@ -49,38 +42,30 @@ class Apartment(models.Model):
         ('S','Smoker'),
         ('N','Non-Smoker')
     )
-
     alcohol_options = (
         ('A','Alcoholic'),
         ('N','Non-Alcoholic')
     )
     car_parking = (
-
         ('Y', 'Yes'),
         ('N', 'No-Car-Parking')
-
     )
     gym = (
-
         ('Y', 'Yes'),
         ('N', 'No-Gym')
-
     )
     heater = (
-
         ('Y', 'Yes'),
         ('N', 'No-heater')
-
     )
 
     apartment_id = models.AutoField(primary_key=True)
     user_id = models.ForeignKey('profile.Profile',on_delete=models.CASCADE)
     apartment_name = models.CharField(max_length=50,validators=[alphabet_and_space_validator])
-    available_units = models.CharField(default=0,validators=[csv_validator])
+    available_units = models.CharField(max_length=400,default=0,validators=[csv_validator])
     apartment_location = models.CharField(max_length=400,validators=[alphanumeric_validator])
     apartment_description = models.CharField(max_length=400, validators=[alphabet_and_space_validator])
     apartment_price = models.IntegerField(default=0, validators=[numeric_validator])
-    #availability = models.CharField(max_length=1, choices=available_options)
     near_by = models.CharField(max_length=10, choices=near_by, default='DAL')
     type_of_room = models.CharField(max_length=10, choices=type_of_room,default='2')
     posession = models.DateField(default=date.today)
@@ -88,14 +73,17 @@ class Apartment(models.Model):
     is_smoke = models.CharField(max_length=1, choices=smoke_options,default='N')
     is_alcohol = models.CharField(max_length=1, choices=alcohol_options,default='N')
     sharing_count = models.IntegerField(default=1, validators=[numeric_validator])
-    #posession = models.BigIntegerField(default=0, validators=[numeric_validator])
     sharing = models.CharField(max_length=1, choices=sharing, default='N')
     car_parking = models.CharField(max_length=1, choices=car_parking, default='N')
     gym = models.CharField(max_length=1, choices=gym, default='N')
     heater = models.CharField(max_length=1, choices=heater, default='N')
-
-
     apartment_image = models.ImageField(upload_to='images/', default='images/svg/apartment.svg')
+
+    def clean_posession(self):
+        date = self.cleaned_data['posession']
+        if date < datetime.date.today():
+            raise forms.ValidationError("Date Cannot be in the past!")
+        return date
 
 class owner(models.Model):
     alphanumeric_validator = RegexValidator(r'^[A-Za-z0-9]*$', 'Shall Contain only alphabets and numbers')

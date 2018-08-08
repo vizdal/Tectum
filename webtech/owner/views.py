@@ -10,6 +10,7 @@ def insert_apartment_details(request,user_id):
 		apartment_form = ApartmentForm(request.POST,request.FILES)
 		if apartment_form.is_valid():
 			apartment_form.save()
-			return render(request,'owner.html')
+			return render(request,'owner.html',{'is_saved':True})
 		else:
-			return HttpResponse(apartment_form.errors)
+			return render(request,'owner.html',{'apartment_form':apartment_form})
+
