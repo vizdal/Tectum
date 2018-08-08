@@ -12,25 +12,36 @@ header,footer{
     margin-bottom: 4em;
 }
 		
-		li.parent-tabs {
+li.parent-tabs {
+    color: #fff;
     cursor: pointer;
-    padding: 5px 10px;
+    padding: 9px 10px 23px 10px;
     display: inline;
-    background-color: #ebebeb;
     font-size: 17px;
-    border: 1px solid #000;
-	border-radius:50px;
+    vertical-align: middle;
+}
+.row.unitdetails {
+        border-bottom: 2px solid #dcdde1;
+        margin: 0;
+        padding-bottom: 0.5em;
+
 }
 li.parent-tabs.active {
     background-color: #fff;
-    font-weight: 700;
-
+    color: #273c75;
+    border-top: 1px solid #273c75;
+    padding: 8px 10px 22px 10px;
+    border-bottom: 1px solid #273c75;
 }
+
 .tabs {
 	margin-bottom: 6em;
-    border: 1px solid;
-    padding-left: 2%;
-	padding-bottom:3%;
+    box-shadow: 5px 10px 10px 10px;
+
+}
+.tabs-header {
+    background-color: #273c75;
+    padding: 0.3em;
 }
 .tabs-child {
     display: none;
@@ -44,7 +55,13 @@ li {
 }
 .show-room img {
     border-radius: 80px;
-    width: 100px;
+    width: 75px;
+}
+.Details-apartment img {
+    height: 49px;
+}
+.row.unitdetails:last-child {
+    border: none;
 }
 .quick-view-details {
     display: none;
@@ -112,11 +129,13 @@ padding-bottom: 6%;
     font-weight: 700;
     color: #000;
 }
+
+
 img.requestdetails {
     cursor: pointer;
 }
 .Unitnumber, .shared, .preferences {
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
 }

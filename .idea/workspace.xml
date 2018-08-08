@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd6296d4-6f63-4858-a41d-635ffff4bb70" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/webtech/static/images/svg/buy.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/webtech/static/images/svg/info.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webtech/static/css/style_aman.css" beforeDir="false" afterPath="$PROJECT_DIR$/webtech/static/css/style_aman.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webtech/templates/apartment_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/webtech/templates/apartment_list.html" afterDir="false" />
     </list>
@@ -36,8 +33,8 @@
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="CSS" value="136" />
-          <entry key="HTML" value="1536" />
+          <entry key="CSS" value="175" />
+          <entry key="HTML" value="1616" />
           <entry key="Python" value="1067" />
         </counts>
       </usages-collector>
@@ -54,8 +51,8 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="css" value="136" />
-          <entry key="html" value="1536" />
+          <entry key="css" value="175" />
+          <entry key="html" value="1616" />
           <entry key="py" value="1067" />
         </counts>
       </usages-collector>
@@ -75,8 +72,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/webtech/static/css/style_aman.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="121" column="1" selection-start-line="121" selection-start-column="1" selection-end-line="121" selection-end-column="1" />
+            <state relative-caret-position="340">
+              <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
             </state>
           </provider>
         </entry>
@@ -84,8 +81,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webtech/templates/apartment_list.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="161" column="41" selection-start-line="161" selection-start-column="41" selection-end-line="161" selection-end-column="41" />
+            <state relative-caret-position="222">
+              <caret line="117" selection-start-line="117" selection-end-line="117" />
             </state>
           </provider>
         </entry>
@@ -115,6 +112,9 @@
       <find>btn btn-outline-dark</find>
       <find>320</find>
       <find>friend1 col-sm-6</find>
+      <find>prefere</find>
+      <find>tabs</find>
+      <find>amen</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -653,15 +653,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/webtech/templates/apartment_list.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="161" column="41" selection-start-line="161" selection-start-column="41" selection-end-line="161" selection-end-column="41" />
+        <state relative-caret-position="222">
+          <caret line="117" selection-start-line="117" selection-end-line="117" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/webtech/static/css/style_aman.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="121" column="1" selection-start-line="121" selection-start-column="1" selection-end-line="121" selection-end-column="1" />
+        <state relative-caret-position="340">
+          <caret line="39" lean-forward="true" selection-start-line="39" selection-end-line="39" />
         </state>
       </provider>
     </entry>

@@ -5,7 +5,7 @@
             <div class="container">
                <div class="pdpage-content">
                   <div class="row">
-                     <div class="apartment-image-pd col-sm-8">
+                     <div class="apartment-image-pd col-sm-4">
                         <img src="{% static '' %}{{apartment.apartment_image}}" alt="image"/>
 
                      </div>
@@ -27,15 +27,17 @@
                   </div>
                </div>
                <div class="tabs">
-                  <ul>
+                  <div class="tabs-header">
+                   <ul>
                      <li class="parent-tabs active" onclick="switch_tabs(this,1)">Availability</li>
                      <li class="parent-tabs" onclick="switch_tabs(this,2)">Ameneties</li>
                      <li class="parent-tabs" onclick="switch_tabs(this,3)">Reviews</li>
                   </ul>
+                  </div>
                   <div class="availability tabs-parent">
                      <div class="tabs-child active availability-tabs-details">
                         {% for unit in data %}
-                        <div class="row">
+                        <div class="row unitdetails">
                            <div class="adjustment show-room">
                               <div class="col-sm-3">
                                  <div class="Unitnumber">
@@ -46,7 +48,7 @@
                                  </div>
 
                               <div class="preferences">
-                        Preferences of roommate are:
+                        Roommate preference:
                     {% if apartment.is_veg == 'N' %}
                         <img title="Non-Vegetarian" class="profile-icons ptr" id="meal" src="{% static 'images/svg/nv.svg' %}" alt="Non-Vegetarian">
                     {% else %}
@@ -113,18 +115,7 @@
                                  </span>
                               </div>
                            </div>
-                           <div class="col-sm-4">
-                              <div class="Book-apartment-details">
-                                 <div class="btn btn-outline-dark">
-                                    Details
-                                 </div>
-                              </div>
-                              <div class="Book-apartment">
-                                 <div class="btn btn-outline-dark">
-                                    Book
-                                 </div>
-                              </div>
-                           </div>
+
                         </div>
                      </div>
                   </div>
