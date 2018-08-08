@@ -11,7 +11,6 @@ from django.http import HttpResponse,HttpResponseRedirect
 
 
 class Apartment_list_view():
-
     def all_apartments(request):
         allApartments = Apartment.objects.all()
         args = {'allApartments' : allApartments,'count':allApartments.count}

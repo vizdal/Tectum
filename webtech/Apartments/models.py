@@ -9,6 +9,7 @@ class Apartment(models.Model):
     alphanumeric_validator = RegexValidator(r'^[A-Za-z0-9]*$','Shall Contain only alphabets and numbers')
     alphabet_validator = RegexValidator(r'^[A-Za-z]*$','Shall contain only alphabets')
     numeric_validator = RegexValidator(r'^[0-9]*$','Shall contain only numerals')
+    csv_validator = RegexValidator(r'^[0-9,]*$','Should have numbers seperated by commas')
     email_validator = EmailValidator(message='Please check the email address')
     alphabet_and_space_validator = RegexValidator(r'^[A-Za-z\s]*$','Shall contain only alphabets')
     
@@ -75,7 +76,7 @@ class Apartment(models.Model):
     apartment_id = models.AutoField(primary_key=True)
     user_id = models.ForeignKey('profile.Profile',on_delete=models.CASCADE)
     apartment_name = models.CharField(max_length=50,validators=[alphabet_and_space_validator])
-    available_units = models.IntegerField(default=0,validators=[numeric_validator])
+    available_units = models.CharField(default=0,validators=[csv_validator])
     apartment_location = models.CharField(max_length=400,validators=[alphanumeric_validator])
     apartment_description = models.CharField(max_length=400, validators=[alphabet_and_space_validator])
     apartment_price = models.IntegerField(default=0, validators=[numeric_validator])
