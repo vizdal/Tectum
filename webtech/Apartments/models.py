@@ -76,7 +76,7 @@ class Apartment(models.Model):
     apartment_id = models.AutoField(primary_key=True)
     user_id = models.ForeignKey('profile.Profile',on_delete=models.CASCADE)
     apartment_name = models.CharField(max_length=50,validators=[alphabet_and_space_validator])
-    available_units = models.CharField(default=0,validators=[csv_validator])
+    available_units = models.CharField(max_length=400,default=0,validators=[csv_validator])
     apartment_location = models.CharField(max_length=400,validators=[alphanumeric_validator])
     apartment_description = models.CharField(max_length=400, validators=[alphabet_and_space_validator])
     apartment_price = models.IntegerField(default=0, validators=[numeric_validator])
