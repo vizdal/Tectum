@@ -84,7 +84,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'tectum',
         'USER': 'root',
-        'PASSWORD': '',
+        'PASSWORD': 'shri',
         'HOST': 'localhost',
         'PORT': '3306',
     }

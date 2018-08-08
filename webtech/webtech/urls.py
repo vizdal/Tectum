@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include,path
 #from django.views.generic import TemplateView
-from webtech.views import index
+from webtech.views import index, welcome
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('profile/',include('profile.urls')),
