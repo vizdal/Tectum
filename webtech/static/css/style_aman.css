@@ -89,6 +89,20 @@ padding-bottom: 6%;
     display: none;
     left: 0;
 }
+.Possession {
+    text-align: center;
+    font-size: 17px;
+    font-weight: 700;
+	    margin-top: 2em;
+
+}
+.typeofroom {
+    text-align: center;
+    font-size: 17px;
+    font-weight: 700;
+	    margin-top: 2em;
+
+}
 .close-quickview {
     cursor: pointer;
     position: absolute;
@@ -121,7 +135,7 @@ padding-bottom: 6%;
     z-index: 100000;
 }
 		
-		.apartment-image img {
+.apartment-image img {
     width: 200px;
 }
 .Recentratings img {
@@ -136,7 +150,7 @@ padding-bottom: 6%;
     margin-top: 3em;
  }
  .apartment-image-pd img {
-    width: 100%;
+    width: 50%;
 }
 .show-room {
     margin-top: 2em;

@@ -30,6 +30,9 @@
     height: 50px;
     display: inline-block;
 }
+.preferences img {
+    width: 3em !important;
+}
 .heater.N {
     background-image: url('../images/svg/water-heater.svg');
     width: 50px;

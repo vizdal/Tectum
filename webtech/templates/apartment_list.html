@@ -6,7 +6,8 @@
                <div class="pdpage-content">
                   <div class="row">
                      <div class="apartment-image-pd col-sm-8">
-                        <img src="../images/pd-image.jpg" alt="image"/>
+                        <img src="{% static '' %}{{apartment.apartment_image}}" alt="image"/>
+
                      </div>
                      <div class="apartment-details-pd col-sm-4">
                         <div class="apartment-name-pd">
@@ -22,11 +23,6 @@
                         <div class="apartment-desc-pd">
                            Location:{{ apartment.apartment_location }}
                         </div>
-
-
-
-
-
                      </div>
                   </div>
                </div>
@@ -38,15 +34,40 @@
                   </ul>
                   <div class="availability tabs-parent">
                      <div class="tabs-child active availability-tabs-details">
+                        {% for i in data %}
                         <div class="row">
                            <div class="adjustment show-room">
                               <div class="col-sm-3">
                                  <div class="Unitnumber">
-                                    Unit number:710
+                                    Unit number:{{ i }}
                                  </div>
                                  <div class="shared">
-                                    Shared
+                                    Number of Roommates:{{ apartment.sharing_count }}
                                  </div>
+
+                              <div class="preferences">
+                        Preferences of roommate are:
+                    {% if apartment.is_veg == 'N' %}
+                        <img title="Non-Vegetarian" class="profile-icons ptr" id="meal" src="{% static 'images/svg/nv.svg' %}" alt="Non-Vegetarian">
+                    {% else %}
+                        <img title="Vegetarian" class="profile-icons ptr" id="meal"  src="{% static 'images/svg/veg.svg' %}" alt="Vegetarian">
+                    {% endif %}
+                    {% if apartment.is_smoke == 'N' %}
+                        <img title="Non-Smoker" class="profile-icons ptr" id="smoke"  src="{% static 'images/svg/ns.svg' %}" alt="Non-Smoker">
+                    {% else %}
+                        <img title="Non-Smoker" class="profile-icons ptr" id="smoke"  src="{% static 'images/svg/smoke.svg' %}" alt="Smoker">
+                    {% endif %}
+                    {% if apartment.is_alcohol == 'N' %}
+                        <img title="Non-Alcoholic" class="profile-icons ptr" id="alcohol"  src="{% static 'images/svg/na.svg' %}" alt="Non-Alcoholic">
+                    {% else %}
+                        <img title="Non-Alcoholic" class="profile-icons ptr" id="alcohol"  src="{% static 'images/svg/drink.svg' %}" alt="Alcoholic">
+                    {% endif %}
+
+
+
+
+
+                              </div>
                               </div>
                               <div class="col-sm-6">
                                  <img src="../images/vishwa.jpg" alt="image" class="col-sm-4 col-xs-4 "/>
@@ -61,74 +82,8 @@
                               </div>
                            </div>
                         </div>
-                        <div class="row">
-                           <div class="adjustment show-room">
-                              <div class="col-sm-3">
-                                 <div class="Unitnumber">
-                                    Unit number:410
-                                 </div>
-                                 <div class="shared">
-                                    Shared
-                                 </div>
-                              </div>
-                              <div class="col-sm-6">
-                                 <img src="../images/asok.jpg" alt="image" class="col-sm-4 col-xs-4 "/>
-                                 <img src="../images/aman.jpg" alt="image" class="col-sm-4 col-xs-4"/>
-                              </div>
-                              <div class="col-sm-3">
-                                 <div class="Details-apartment col-sm-3">
-                                    <div class="btn btn-outline-dark Details" onclick="book_now_click()">
-                                       Details
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="row">
-                           <div class="adjustment show-room free">
-                              <div class="col-sm-3">
-                                 <div class="Unitnumber">
-                                    Unit number:436
-                                 </div>
-                                 <div class="shared">
-                                    Free
-                                 </div>
-                              </div>
-                              <div class="col-sm-6">
-                                 &#160;
-                              </div>
-                              <div class="col-sm-3">
-                                 <div class="Details-apartment col-sm-3">
-                                    <div class="btn btn-outline-dark Book" onclick="new_booking()">
-                                       Book
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div class="row">
-                           <div class="adjustment show-room">
-                              <div class="col-sm-3">
-                                 <div class="Unitnumber">
-                                    Unit number:1625
-                                 </div>
-                                 <div class="shared">
-                                    Shared
-                                 </div>
-                              </div>
-                              <div class="col-sm-6">
-                                 <img src="../images/aman.jpg" alt="image" class="col-sm-4 col-xs-4 "/>
-                                 <img src="../images/shri.png" alt="image" class="col-sm-4 col-xs-4"/>
-                              </div>
-                              <div class="col-sm-3">
-                                 <div class="Details-apartment col-sm-3">
-                                    <div class="btn btn-outline-dark Details" onclick="book_now_click()">
-                                       Details
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
+                        {% endfor %}
+
                      </div>
                   </div>
                   <div class="amenities tabs-parent">
@@ -208,9 +163,17 @@
                  </div>
                </div>
             </div>
-            <div class="cost">
-               Cost: CAD 320
+             <div class="typeofroom">
+               Type of Room: {{ apartment.type_of_room }}
             </div>
+             <div class="Possession">
+               Possession Date: {{ apartment.posesssion }}
+            </div>
+
+            <div class="cost">
+               Cost: {{ apartment.apartment_price }}
+            </div>
+
          <div class="row requext-button">
             <div class="btn btn-outline-dark">Request Accomodation</div>
          </div>

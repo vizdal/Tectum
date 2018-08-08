@@ -19,8 +19,12 @@ class Apartment_list_view():
         request.META["CSRF_COOKIE_USED"] = True
         apartment_id = int(apartment_id)
         apartment = Apartment.objects.get(apartment_id=apartment_id)
+        units=apartment.available_units
+        print("Available Units are"+units)
+        data = units.split(",")
+        print(data[0])
         feedback=Feedback.objects.get(apartment_id=apartment_id)
-        return render(request, 'apartment_list.html', {'apartment': apartment, 'feedback': feedback})
+        return render(request, 'apartment_list.html', {'apartment': apartment, 'feedback': feedback,'data':data})
     def all_apartment(request):
         allApartments = Apartment.objects.all()
         args = {'allApartments' : allApartments }
