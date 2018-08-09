@@ -23,7 +23,11 @@ class Apartment_list_view():
         print("Available Units are"+units)
         data = units.split(",")
         print(data[0])
-        feedback=Feedback.objects.get(apartment_id=apartment_id)
+        feedback = None
+        try:
+            feedback=Feedback.objects.get(apartment_id=apartment_id)
+        except:
+            print('No Feedback')
         return render(request, 'apartment_list.html', {'apartment': apartment, 'feedback': feedback,'data':data})
 
     def apartment_by_user(request, user_id):
