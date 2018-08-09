@@ -56,27 +56,27 @@
             <div class="col-sm-4">
                 <div class="p05">
                     <label for="apartment_name" class="txtgray">Apartment Name</label>
-                    <input type="text" id="apartment_name" ng-required="true" class="form-control" name="apartment_name" value="{{saved_row.apartment_name}}" ng-model="firstname">
+                    <input type="text" id="apartment_name" ng-required="true" placeholder="Apartment Name e.g. Windsor Apartments" class="form-control" name="apartment_name" value="{{saved_row.apartment_name}}" ng-model="firstname">
               		<span style="color: red;" id="errorfn">{{apartment_form.apartment_name.errors}}</span>
                 </div>
                 <div class="p05">
                     <label for="apartment_location" class="txtgray">Location</label>
-                    <input name="apartment_location" value="{{saved_row.apartment_location}}" ng-required="true" type="text" id="apartment_location" class="form-control">
+                    <input name="apartment_location" value="{{saved_row.apartment_location}}" placeholder="e.g. Halifax" ng-required="true" type="text" id="apartment_location" class="form-control">
                     <span style="color: red;" id="errorln">{{apartment_form.apartment_location.errors}}</span>
                 </div>
                 <div class="p05">
                     <label for="apartment_description" class="txtgray">Description</label>
-                    <input name="apartment_description" value="{{saved_row.apartment_description}}" ng-required="true" type="text" id="apartment_description" class="form-control">
+                    <input name="apartment_description" value="{{saved_row.apartment_description}}" placeholder="e.g. Good Apartments" ng-required="true" type="text" id="apartment_description" class="form-control">
                     <span style="color: red;" id="errorln">{{apartment_form.last_name.errors}}</span>
                 </div>
                 <div class="p05">
                     <label for="apartment_price" class="txtgray">Apartment Cost</label>
-                    <input type="text" id="apartment_price" name="apartment_price" value="{{saved_row.apartment_price}}" ng-required="true" class="form-control">
+                    <input type="text" id="apartment_price" name="apartment_price" placeholder="e.g. 1350" value="{{saved_row.apartment_price}}" ng-required="true" class="form-control">
                     <span style="color: red;" id="errorem">{{apartment_form.apartment_price.errors}}</span>
                 </div>
                 <div class="p05">
                     <label for="available_units" class="txtgray">Availability</label>
-                    <input type="text" id="available_units" name="available_units" value="{{saved_row.available_units}}" ng-required="true" class="form-control">
+                    <input type="text" id="available_units" name="available_units" placeholder="e.g 410,1505,325" value="{{saved_row.available_units}}" ng-required="true" class="form-control">
                     <span style="color: red;" id="errorph">{{apartment_form.available_units.errors}}</span>
                 </div>
 
@@ -121,7 +121,7 @@
                 <input type="hidden" name="user_id" value="1"/>
                 <div class="p05">
                     <label for="posession" class="txtgray">Date of Posession</label>
-                    <input type="text" id="posession" name="posession" ng-required="true" value="{{saved_row.posession}}" class="form-control">
+                    <input type="text" id="posession" name="posession" ng-required="true" placeholder="e.g. 2012-04-05" value="{{saved_row.posession}}" class="form-control">
                     <span style="color: red;" id="errorbr">{{apartment_form.posession.errors}}</span>
                 </div>
                 <div class="p05">
