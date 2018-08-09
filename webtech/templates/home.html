@@ -1,5 +1,13 @@
 {% load static %}
+{% if user.is_authenticated %}
 {% include "header.html" %} 
+<script>
+	{% if user_id%}
+		console.log("In");
+		var user_id = {{profile_user_id}};
+		localStorage.setItem("user_id",user_id);
+	{% endif %}
+</script>
 	<!--Start of corousel-->
 	<div id="apartmentcontrol" class="carousel slide" data-ride="carousel">
   		<div class="carousel-inner">
@@ -24,7 +32,8 @@
 	</div>
 	<!--End of corousel-->
 	<div class="p1">
-		<div class="emptyimage pt3">
+			<p>Welcome {{ user.username }} !!!</p>       
+    	<div class="emptyimage pt3">
 			<img src="{% static 'images/svg/pin.svg' %}" style="width: 20%" alt="Houses and Localities">
 		</div>
 		<h1 class="emptyimage">We cannot find any details! Let's get started.</h1>
@@ -32,3 +41,12 @@
 			<button type="button" class="btn btn-outline-dark">Find Apartments</button>
 		</div>
 	</div>
+{% else %}
+	<div class="p1">
+		<div class="emptyimage pt3">
+			<img src="{% static 'images/svg/alarm.svg' %}" style="width: 20%" alt="Houses and Localities">
+		</div>
+		<h1 class="emptyimage p05">Unauthorized Access!</h1>
+	</div>
+
+{% endif %}

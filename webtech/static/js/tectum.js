@@ -45,7 +45,12 @@ var csrftoken = getCookie('csrftoken');
  *Custom methods for Tectum
  * */
 loadprofile = function(userid){/*User id will be passed as null for static page*/
-    $("#container-div").load('profile.html');
+    userid = localStorage.getItem('user_id');
+    window.location='/profile/'+userid+'/';
+}
+loadadmin = function(){
+    userid = localStorage.getItem('user_id');
+    window.location = '/owner/'+userid+'/';
 }
 load_profile_data = function(user_id){
 	console.log(user_id)
@@ -96,7 +101,9 @@ loadapartment = function(userid){
     $("#container-div").load('apartment.html');
 }
 loadfeedback = function(userid){
-    $("#container-div").load('feedback.html');
+    userid = localStorage.getItem("user_id")
+    console.log(userid)
+    window.location='/feedback/'+userid+'/';
 }
 loadhome =function(userid){
     $("#container-div").load('home.html');

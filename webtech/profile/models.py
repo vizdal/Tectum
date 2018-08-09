@@ -45,20 +45,19 @@ class Profile(models.Model):
     profile_image = models.ImageField(upload_to='images/', default='images/jpeg/user.jpg')
     credits = models.IntegerField(default=0,null=True,validators=[numeric_validator])
 
-    def __str__():
+    def __str__(self):
         return_dict = {}
-        return_dict['id'] = user_id
-        return_dict['fname'] = first_name
-        return_dict['lname'] = last_name
-        return_dict['gender'] = gender
-        return_dict['email'] = email
-        return_dict['phone'] = phone
-        return_dict['university'] = university
-        return_dict['branch'] = branch
-        return_dict['is_veg'] = is_veg
-        return_dict['is_smoke'] = is_smoke
-        return_dict['is_alcohol'] = is_alcohol
-        return_dict['image_url'] = image_url
+        return_dict['user_id'] = self.user_id
+        return_dict['fname'] = self.first_name
+        return_dict['lname'] = self.last_name
+        return_dict['gender'] = self.gender
+        return_dict['email'] = self.email
+        return_dict['phone'] = self.phone
+        return_dict['university'] = self.university
+        return_dict['branch'] = self.branch
+        return_dict['is_veg'] = self.is_veg
+        return_dict['is_smoke'] = self.is_smoke
+        return_dict['is_alcohol'] = self.is_alcohol
         return json.dumps(return_dict)
 
     def get_profile_details(user_id_param):

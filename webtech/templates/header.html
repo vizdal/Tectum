@@ -38,7 +38,7 @@
 		      <li class="nav-item ptr pr1 adjwidth" title="Apartment" onclick="window.location='/apartments/'">
 			      <a class="nav-link"><img class="imagetitle" src="{% static 'images/svg/city.svg' %}" alt="Apartment"><span class="texttitle">Apartment</span></a>
 		      </li>
-		      <li class="nav-item ptr pr1 adjwidth" title="Feedback" onclick="window.location='/feedback/1/'">
+		      <li class="nav-item ptr pr1 adjwidth" title="Feedback" onclick="loadfeedback()">
 			      <a class="nav-link"><img class="imagetitle" src="{% static 'images/svg/feedback.svg' %}" alt="Feedback"><span class="texttitle">Feedback</span></a>
 		      </li>
           {% endif %}
@@ -47,10 +47,10 @@
 		        <!--Using inline style to override bootstrap default-->
 		        <div class="dropdown-menu" aria-labelledby="navDropDownLink" style="position: absolute;top: 3.2em;left: -7em;">
         			<a class="dropdown-item" href="#">
-            			<span class="h6" onclick="window.location='/profile/1/'">Viswanath M S</span>
+            			<span class="h6" onclick="loadprofile()">Viswanath M S</span>
             		</a>
             		<div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/owner/">Admin</a>
+                <a class="dropdown-item" href="#" onclick="loadadmin()">Admin</a>
                 <div class="dropdown-divider"></div>
             		<a class="dropdown-item" onclick="window.location='/authorize/logout/'" href="#">Logout</a>
         		</div>

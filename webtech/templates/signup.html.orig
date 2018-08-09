@@ -1,9 +1,9 @@
 {% block content %}
   <h2>Sign up</h2>
-  <div style="margin:auto;">
-    <form method="post">
-      {% csrf_token %}
-      {% for field in form %}
+  <form method="post">
+    {% csrf_token %}
+    {% for field in form %}
+      <p>
         {{ field.label_tag }}<br>
         {{ field }}
         {% if field.help_text %}
@@ -16,5 +16,4 @@
     {% endfor %}
     <button type="submit">Sign up</button>
   </form>
-</div>
 {% endblock %}

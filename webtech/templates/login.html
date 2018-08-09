@@ -5,57 +5,45 @@
     {{ field }} <br/>
     {{ field.errors }}<br/>
 {% endfor %}
-
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <title>Tectum-Home Page</title>
-	<meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" rel="stylesheet"/>
-  		<link rel="stylesheet" type="text/css" href="{% static 'css/normalize.css' %}" />
-		<link rel="stylesheet" type="text/css" href="{% static 'css/demo.css' %}" />
-		<link rel="stylesheet" type="text/css" href="{% static 'css/component.css' %}" />
-		<link rel="stylesheet" type="text/css" href="{% static 'css/cs-select.css' %}" />
-		<link rel="stylesheet" type="text/css" href="{% static 'css/cs-skin-boxes.css' %}" />
-		<link rel="stylesheet" type="text/css" href="{% static 'css/tectum.css' %}" />
-{#		<script src="{% static 'js/angular.min.js' %}"></script>#}
-{#		<script src="{% static 'js/modernizr.custom.js' %}"></script>#}
-</head>
-<body>
-    <div class="LoginPage">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'css/tectum.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"/>
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/tectum.js' %}"></script>
+    <script src="{% static 'js/angular.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style_aman.css' %}">
 
-        <div class="container logincontainer">
-            
-            <div class="row">
-                <h2 class="emaillogin">Login With Email </h2>
-                <form method="POST" action="/authorize/login/" class="LoginForm" autocomplete="off">
-                    {% csrf_token %}
-                    <div class="Email">
-                        <input type="text" id="username" style="color: black;" name="username" placeholder="username" required="True">
+    <title>Tectum&#x2122;</title>
+  </head>
+  <body>
+    <div id="loginparent" ng-app="">
+        <form method="post" id="profile_form" action="/authorize/login/" name="loginForm">
+            {% csrf_token %}
+            <p class="p1 h4 emptyimage">Login</p>
+            <div class="row p4" style="padding-top: 0;margin-left: 0;margin-right: 0;">
+                <div class="col-sm-4">
+                    <div class="p05">
+                        <label for="username" class="txtgray">Username</label>
+                        <input type="text" id="username" ng-required="true" class="form-control" name="username" ng-model="username">
+                        <span style="color: red;" id="errorfn">{{profile_form.first_name.errors}}</span>
                     </div>
-
-                    <div class="Password">
-                        <input type="password" style="color: black;" id="user_password" name="user_password" placeholder="Password" required="True">
+                    <div class="p05">
+                        <label for="user_password" class="txtgray">Last Name</label>
+                        <input name="user_password" ng-required="true" type="password" id="user_password" class="form-control">
+                        <span style="color: red;" id="errorln">{{profile_form.last_name.errors}}</span>
                     </div>
-
-                    <div>
-                        <input type="submit" value="Login" class="btn loginbtn"/>
+                    <div class="p05">
+                        <input type="submit" value="Login"/>
                     </div>
-
-                    <!--<label>
-                        <input type="checkbox" checked="checked" name="remember"> Remember me
-                    </label>
-
-                    <div>
-                        <input type="reset" class="button cancelbtn" value="Cancel"></input>
-                        <span class="psw"><a href="#"> Forgot Password ?</a></span>
-                    </div>-->
-                </form>
+                </div>
             </div>
-            <h2> {{ error }}</h2>
-        </div>
+        </form>
     </div>
-</body>
+   </body>
 </html>
