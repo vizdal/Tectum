@@ -46,6 +46,7 @@ def update_profile(request):
             #return render(request,'profile.html', { 'saved_row':user,'is_update':1, 'file_name':constructed_file_name})
             #return render(request,'profile.html')
         else:
+            print(profile_form.errors)
             user = None
             try:
                 user = Profile.objects.get(email=request.POST.get('email'))

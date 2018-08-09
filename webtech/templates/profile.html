@@ -38,6 +38,31 @@
 		  <img style="display:none;" title="Facebook" class="social-icons" src="{% static 'images/svg/facebook.svg'%}" alt="Facebook">
 		  <img title="WhatsApp" style="display:none;" class="social-icons" src="{% static 'images/svg/whatsapp.svg' %}" alt="WhatsApp">
 		  <img title="email" style="display:none;" class="social-icons" src="{% static 'images/svg/email.svg' %}" alt="email">
+
+    <form action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post" target="_top">
+  <input type="hidden" name="cmd" value="_s-xclick">
+  <input type="hidden" name="hosted_button_id" value="TTMYLY5TQR4D4">
+  <table>
+    <tr>
+      <td>
+        <input type="hidden" name="on0" value="Apartment">
+        Purchase Credits
+      </td>
+    </tr>
+    <tr style="display: none;">
+      <td>
+        <select value="0.5" name="os0">
+          <option value="Option 1">Option 1 </option>
+          <option value="Option 2">Option 2 </option>
+          <option value="Option 3">Option 3 </option>
+        </select>
+      </td>
+    </tr>
+  </table>
+  <input type="image" src="https://www.sandbox.paypal.com/en_US/C2/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+  <img alt="" border="0" src="https://www.sandbox.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+</form>
+
           </div>
         </div>
       </div> 
@@ -46,6 +71,7 @@
     <button type="button" class="btn btn-success" style="width:10em;" onclick="load_profile_edit({{saved_row.user_id}})">Edit</button>
   </div>
 </div>
+
 </div>
 </script>
 <script>

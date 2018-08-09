@@ -19,6 +19,7 @@
                 <div class="p1">
                     <input type="file" name="profileimage"/>
                 </div>
+                <input type="hidden" value='{{saved_row.credits}}' name="credits"/>
                 <div class="emptyimage p1">
             {% if saved_row.is_veg == 'N' %}
 			     <img title="Non-Vegetarian" class="profile-icons ptr" id="meal" onclick="toggleMealSelection()" src="{% static 'images/svg/nv.svg' %}" alt="Non-Vegetarian">

@@ -52,6 +52,10 @@ loadadmin = function(){
     userid = localStorage.getItem('user_id');
     window.location = '/owner/'+userid+'/';
 }
+loadaptmtview = function(){
+    owner_id = localStorage.getItem('user_id');
+    window.location = '/apartments/owner/'+owner_id;
+}
 load_profile_data = function(user_id){
 	console.log(user_id)
 	$.ajax({
@@ -68,7 +72,7 @@ load_profile_data = function(user_id){
                 data = JSON.parse(data)
                 template = template.replace(/##first_name##/g,data[0].fields.first_name)
                 .replace(/##last_name##/g,data[0].fields.last_name).replace(/##dept##/g,data[0].fields.branch)
-                .replace(/##univ##/g,data[0].fields.university)
+                .replace(/##univ##/g,data[0].fields.university);
                 if(data[0].fields.is_veg ==='N' ){
                     template = template.replace(/##meal_title##/g,'Non-Vegetarian').replace(/%23%23meal_image%23%23/g,'nv');
                 } else {

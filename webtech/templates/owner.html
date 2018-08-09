@@ -6,7 +6,7 @@
     {{ field.errors }}<br/>
 {% endfor %}
 <div id="profileparent" ng-app="">
-    <form method="post" id="profile_form" enctype="multipart/form-data" action="/owner/1/save/" name="profileForm">
+    <form method="post" id="owner_form" enctype="multipart/form-data" action="" name="profileForm">
 	{% csrf_token %}
         <p class="p1 h4 emptyimage">Apartment Details</p>
         <div class="row p4" style="padding-top: 0;margin-left: 0;margin-right: 0;">
@@ -118,7 +118,7 @@
                         <option value="COSTCO">Costco</option>
                     </select>
                 </div>
-                <input type="hidden" name="user_id" value="1"/>
+                <input type="hidden" id="apartment_user_id" name="user_id" value=""/>
                 <div class="p05">
                     <label for="posession" class="txtgray">Date of Posession</label>
                     <input type="text" id="posession" name="posession" ng-required="true" placeholder="e.g. 2012-04-05" value="{{saved_row.posession}}" class="form-control">
@@ -142,3 +142,7 @@
     </form>
 </div>
 {{apartment_form.apartment_id}}
+<script>
+    $("#owner_form").attr("action","/owner/"+localStorage.getItem('user_id')+"/save/")
+    $("#apartment_user_id").val(localStorage.getItem("user_id"));
+</script>
